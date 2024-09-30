@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
     export let data
     const authUser = data.authUser;
 </script>
@@ -13,4 +13,6 @@
             </button>
         </form>
     </div>
-</div>
+</div> -->
+
+<div>Testing Dashboard logged in content</div>

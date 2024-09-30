@@ -1,5 +1,5 @@
 import type { Actions } from './$types'; 
-import { db } from '$lib/database';
+import db from '$lib/database';
 import { invalid, redirect } from '@sveltejs/kit';
 import { hashSync } from 'bcryptjs';
 import { randomUUID } from 'crypto';

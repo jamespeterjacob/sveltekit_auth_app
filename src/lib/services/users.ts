@@ -1,4 +1,5 @@
-import { db } from '$lib/database';
+import { DATABASE_URL } from '$env/static/private';
+import prisma from '$lib/database';
 
 /**
  * Get user by uuid 
@@ -7,7 +8,7 @@ import { db } from '$lib/database';
  * @returns 
  */
 export const findByUuid = async (uuid: string) => {
-    return await db.user.findUnique({
+    return await prisma.user.findUnique({
         where: {
             uuid: uuid,
         },
@@ -24,5 +25,12 @@ export const findByUuid = async (uuid: string) => {
  * @returns 
  */
 export const findByEmail = async (email: string) => {
-    return await db.user.findUnique({ where: { email: email }})
+    return await prisma.user.findUnique({ where: { email: email }})
 }
+
+export const allUsers = async () => {
+    return await prisma.user.findMany()
+}
+
+
+
